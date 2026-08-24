@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.dentalexperts-sonipat.com/sitemap.xml

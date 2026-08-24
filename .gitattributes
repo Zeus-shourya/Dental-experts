@@ -1,0 +1,18 @@
+# Normalise to LF in the repo; check out native on Windows.
+* text=auto
+
+# Static site is served from Linux hosts — keep these LF on disk too.
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.svg  text eol=lf
+*.xml  text eol=lf
+*.txt  text eol=lf
+*.md   text eol=lf
+
+# PowerShell stays CRLF.
+*.ps1 text eol=crlf
+
+# Never touch binaries.
+*.png binary
+*.jpg binary

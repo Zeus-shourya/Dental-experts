@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Dental Experts">
+  <!-- Solid navy tile with a heavier mark: the thin outline version dissolves
+       at 16px, so the tooth is filled and the ring is dropped. -->
+  <rect width="48" height="48" rx="10" fill="#12293F"/>
+  <path d="M24 10c-5.2 0-8.7 3.3-8.7 8.2 0 3.9 1.2 5.8 1.8 9.1.6 3.2.5 8.7 3 8.7 2.1 0 1.9-4.2 3.9-4.2s1.8 4.2 3.9 4.2c2.5 0 2.4-5.5 3-8.7.6-3.3 1.8-5.2 1.8-9.1C32.7 13.3 29.2 10 24 10Z" fill="#FBF7F0"/>
+  <path d="M24 17v8.4" stroke="#C1974F" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
