@@ -12,3 +12,7 @@ desktop.ini
 .claude/
 *.bak
 *.tmp
+
+# Held back until GoDaddy DNS points at GitHub. Pushing CNAME before then
+# makes Pages redirect the working github.io URL to a parked domain.
+CNAME.pending
