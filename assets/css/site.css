@@ -751,3 +751,21 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
     letter-spacing: .02em;
   }
 }
+
+/* -- Header crowding on phones --------------------------------------------
+   Brand + "Book Appointment" + burger came to more than a phone viewport:
+   the burger sat 14px past the padding at 375px, 29px at 360px, and the
+   document actually overflowed at 320px. The label collapses to "Book",
+   the gap tightens, and the brand is allowed to shrink rather than force
+   the row wider than the screen. */
+@media (max-width: 640px) {
+  .hdr .shell { gap: 10px; }
+  .hdr .cta-rest { display: none; }
+  .hdr .hdr-cta { padding: 12px 18px !important; }
+  /* flex items default to min-width:auto and refuse to shrink below their
+     content — which is what pushed the burger off-screen. */
+  .hdr .brand { min-width: 0; }
+  .hdr .brand-tx { min-width: 0; }
+  .hdr .brand-tx b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .burger { flex: none; }
+}
