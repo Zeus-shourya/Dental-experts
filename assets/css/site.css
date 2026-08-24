@@ -28,7 +28,7 @@
      display text only (3:1 graphics/large-text threshold).
      --gold-ink is the same hue pushed deep enough to carry small text and to
      sit under white button labels. Never swap one for the other. */
-  --gold:       #C1974F;
+  --gold:       #CDA350;
   --gold-ink:   #7F5C1C;
   --gold-deep:  #6E4F17;
 
@@ -228,7 +228,7 @@ strong, b { font-weight: 500; }
 .hdr .shell { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 74px; padding-block: 10px; }
 
 .brand { display: inline-flex; align-items: center; gap: .6em; text-decoration: none; color: var(--navy); }
-.brand svg { width: 38px; height: 38px; flex: none; }
+.brand svg, .brand-mark { width: 38px; height: auto; flex: none; }
 .brand-tx { display: grid; line-height: 1.1; }
 .brand-tx b { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.42rem; font-weight: 600; letter-spacing: .01em; }
 .brand-tx span { font-size: .6rem; font-weight: 400; letter-spacing: .19em; text-transform: uppercase; color: var(--gold-ink); }
@@ -538,7 +538,7 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
   .rows dd { text-align: left; }
   .topbar .shell { justify-content: center; }
   .hdr .shell { min-height: 66px; }
-  .brand svg { width: 33px; height: 33px; }
+  .brand svg, .brand-mark { width: 33px; }
   .brand-tx b { font-size: 1.24rem; }
   .hero-fig::before { display: none; }
 }
@@ -717,4 +717,37 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
   .gr-summary { flex-direction: column; gap: 18px; text-align: center; }
   .gr-div { width: 100%; height: 1px; min-height: 0; align-self: auto; }
   .gr-score { flex-direction: column; gap: 8px; }
+}
+
+/* -- Brand mark placement -------------------------------------------------
+   The logo is gold signage drawn for a dark wall. On the ivory header its
+   hairline strokes wash out at 38px, so there it sits on a navy chip — which
+   also matches the favicon and the apple-touch icon. The drawer and footer are
+   already dark, so the mark runs bare there. */
+.hdr .brand-mark {
+  width: 46px;
+  padding: 6px;
+  background: var(--navy);
+  border-radius: 10px;
+}
+@media (max-width: 640px) {
+  .hdr .brand-mark { width: 40px; padding: 5px; }
+}
+
+/* -- Header at phone width ------------------------------------------------
+   "Precision Care. Confident Smiles." is 32 characters. Beside a 40px mark and
+   a burger on a 375px screen it wrapped to four lines and pushed the header to
+   106px, so the tagline is dropped here — the wordmark alone carries the brand,
+   and the full lockup still appears in the drawer and the footer.
+   The CTA is kept (it is the primary booking action on mobile) but pinned to a
+   single line; at full size its label wrapped and stood 77px tall. */
+@media (max-width: 640px) {
+  .hdr .brand-tx span { display: none; }
+  .hdr .btn-gold {
+    white-space: nowrap;
+    min-height: 42px;
+    padding: 10px 15px;
+    font-size: .82rem;
+    letter-spacing: .02em;
+  }
 }
