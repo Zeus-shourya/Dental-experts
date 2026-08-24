@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.dentalexperts-sonipat.com/sitemap.xml
+Sitemap: https://sonipatdentalexperts.com/sitemap.xml
