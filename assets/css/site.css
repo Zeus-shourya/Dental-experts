@@ -774,3 +774,68 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
   .hdr .brand-tx b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .burger { flex: none; }
 }
+
+/* -- Treatment media + booking --------------------------------------------
+   Each treatment gets a visual and its own Book Now.
+
+   The visual is a line illustration rather than a photograph, deliberately:
+   the clinic has only two real photos, and dropping stock imagery of other
+   practices onto a medical page implies work and premises that are not
+   theirs. To swap in a real clinic photo later, replace the <svg> inside
+   .svc-media with <img src="..." alt="..."> — the CSS already covers both. */
+.svc-media {
+  position: relative;
+  margin: 0 0 clamp(16px, 1.8vw, 22px);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background:
+    radial-gradient(120% 100% at 30% 15%, rgba(205,163,80,.16) 0%, rgba(205,163,80,0) 55%),
+    var(--stone);
+  overflow: clip;
+}
+.svc-media .svc-art {
+  width: 44%;
+  max-width: 132px;
+  height: auto;
+  color: var(--navy);
+}
+.svc-media .svc-art .accent { color: var(--gold-ink); }
+/* Photo slot. object-position is load-bearing: the clinic photos are
+   portrait and the slot is square on the detail pages and 4:3 on the cards,
+   so a centred crop cuts the dentist off at the shoulders. Biasing upward
+   keeps both his face and the hands working in frame. */
+.svc-media img {
+  /* Absolutely positioned on purpose. As an in-flow grid item, height:100%
+     resolves against a parent whose own height comes from aspect-ratio —
+     a cyclic dependency, so it fell back to the intrinsic 780x904 and
+     stretched the square slot to 280x324. Out of flow, aspect-ratio wins. */
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 34%;
+}
+
+/* Cards become columns so every Book Now lines up along the bottom. */
+.svc-card { display: flex; flex-direction: column; }
+.svc-card > p { flex: 1; }
+.svc-book { margin-top: auto; padding-top: clamp(14px, 1.6vw, 20px); }
+.svc-book .btn { min-height: 44px; padding: 11px 22px; font-size: .88rem; }
+
+/* Detail articles: illustration, copy, and the covers list. */
+.svc-detail { display: grid; grid-template-columns: 280px 1fr 1fr; gap: clamp(18px, 2.6vw, 40px); align-items: start; }
+.svc-detail .svc-media { margin-bottom: 0; aspect-ratio: 1 / 1; }
+@media (max-width: 1040px) { .svc-detail { grid-template-columns: 240px 1fr; } .svc-detail > :last-child { grid-column: 2 / -1; } }
+@media (max-width: 760px)  { .svc-detail { grid-template-columns: 1fr; } .svc-detail > :last-child { grid-column: 1; } .svc-detail .svc-media { aspect-ratio: 16 / 9; } }
+
+/* Two actions per home-page card: book, or read the detail. */
+.svc-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+
+/* Arriving from a treatment's Book Now, the Service field is filled in for
+   you — flash the border so the change registers instead of going unnoticed. */
+.field select[data-prefilled] {
+  border-color: var(--gold-ink);
+  box-shadow: 0 0 0 3px rgba(127, 92, 28, .18);
+}

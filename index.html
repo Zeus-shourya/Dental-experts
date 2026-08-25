@@ -89,6 +89,71 @@
 </head>
 
 <body>
+<!-- Treatment illustrations. Line art in the brand palette; `.accent` parts
+     pick up the brass. Drawn once here and referenced per card. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <g id="tdefs" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+
+  <symbol id="t-rootcanal" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 8c-9 0-15 5.4-15 13.6 0 6.5 1.9 9.8 3 15.2 1.1 5.4.8 14.6 5.2 14.6 3.5 0 3.2-7 6.8-7s3.3 7 6.8 7c4.4 0 4.1-9.2 5.2-14.6 1.1-5.4 3-8.7 3-15.2C47 13.4 41 8 32 8Z"/>
+    <path class="accent" stroke="currentColor" d="M28 24v20M36 24v20" opacity=".85"/>
+    <path class="accent" d="M32 4v16" stroke-width="2.6"/>
+  </symbol>
+
+  <symbol id="t-crown" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 30h36v18a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6V30Z"/>
+    <path class="accent" d="M10 30 16 14l8 9 8-13 8 13 8-9 6 16" stroke-width="2.4"/>
+    <path d="M24 38v8M32 38v8M40 38v8" opacity=".5"/>
+  </symbol>
+
+  <symbol id="t-implant" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 16h28l-4 10H22l-4-10Z"/>
+    <path class="accent" d="M32 26v28" stroke-width="2.6"/>
+    <path class="accent" d="M25 32h14M25 38h14M26 44h12M28 50h8"/>
+    <path d="M8 58c6-5 12-7 24-7s18 2 24 7" opacity=".45"/>
+  </symbol>
+
+  <symbol id="t-extraction" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 14c-8 0-13 4.8-13 12 0 5.7 1.7 8.6 2.6 13.3 1 4.7.7 12.7 4.6 12.7 3 0 2.8-6.1 5.8-6.1s2.9 6.1 5.8 6.1c3.9 0 3.6-8 4.6-12.7.9-4.7 2.6-7.6 2.6-13.3 0-7.2-5-12-13-12Z"/>
+    <path class="accent" d="M14 10l10 10M50 10 40 20" stroke-width="2.6"/>
+    <path class="accent" d="M12 6v6h6M52 6v6h-6" opacity=".7"/>
+  </symbol>
+
+  <symbol id="t-cleaning" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 16c-7.5 0-12.5 4.5-12.5 11.3 0 5.4 1.6 8.2 2.5 12.7.9 4.5.7 12 4.3 12 2.9 0 2.7-5.8 5.7-5.8s2.7 5.8 5.7 5.8c3.6 0 3.4-7.5 4.3-12 .9-4.5 2.5-7.3 2.5-12.7C42.5 20.5 37.5 16 30 16Z"/>
+    <path class="accent" d="M48 8 40 22" stroke-width="2.6"/>
+    <path class="accent" d="M52 20l3 3M44 6l2 3M56 32l3 1" opacity=".8"/>
+  </symbol>
+
+  <symbol id="t-gums" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="accent" d="M6 40c0-12 11-20 26-20s26 8 26 20c0 6-4 8-8 6s-6-6-18-6-14 4-18 6-8 0-8-6Z" stroke-width="2.3"/>
+    <path d="M22 22v12M32 20v14M42 22v12" opacity=".55"/>
+  </symbol>
+
+  <symbol id="t-whitening" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 16c-7.5 0-12.5 4.5-12.5 11.3 0 5.4 1.6 8.2 2.5 12.7.9 4.5.7 12 4.3 12 2.9 0 2.7-5.8 5.7-5.8s2.7 5.8 5.7 5.8c3.6 0 3.4-7.5 4.3-12 .9-4.5 2.5-7.3 2.5-12.7C40.5 20.5 35.5 16 28 16Z"/>
+    <path class="accent" d="M50 14l2.4 5.6L58 22l-5.6 2.4L50 30l-2.4-5.6L42 22l5.6-2.4L50 14Z" stroke-width="2"/>
+    <path class="accent" d="M52 40l1.6 3.6L57 45l-3.4 1.4L52 50l-1.6-3.6L47 45l3.4-1.4L52 40Z" opacity=".7"/>
+  </symbol>
+
+  <symbol id="t-dentures" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="accent" d="M8 26c0-8 10-13 24-13s24 5 24 13c0 12-8 24-24 24S8 38 8 26Z" stroke-width="2.3"/>
+    <path d="M16 24c0-4 3-6 7-6s7 2 7 6-3 6-7 6-7-2-7-6ZM34 24c0-4 3-6 7-6s7 2 7 6-3 6-7 6-7-2-7-6Z" opacity=".6"/>
+    <path d="M20 34c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5ZM34 34c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5Z" opacity=".45"/>
+  </symbol>
+
+  <symbol id="t-children" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 12c-9 0-15 5.4-15 13.6 0 6.5 1.9 9.8 3 15.2 1.1 5.4.8 14.6 5.2 14.6 3.5 0 3.2-7 6.8-7s3.3 7 6.8 7c4.4 0 4.1-9.2 5.2-14.6 1.1-5.4 3-8.7 3-15.2C47 17.4 41 12 32 12Z"/>
+    <circle class="accent" cx="26" cy="28" r="1.9" fill="currentColor" stroke="none"/>
+    <circle class="accent" cx="38" cy="28" r="1.9" fill="currentColor" stroke="none"/>
+    <path class="accent" d="M25 36c1.8 2.6 4.2 3.9 7 3.9s5.2-1.3 7-3.9" stroke-width="2.3"/>
+  </symbol>
+
+  <symbol id="t-emergency" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 14c-8 0-13 4.8-13 12 0 5.7 1.7 8.6 2.6 13.3 1 4.7.7 12.7 4.6 12.7 3 0 2.8-6.1 5.8-6.1s2.9 6.1 5.8 6.1c3.9 0 3.6-8 4.6-12.7.9-4.7 2.6-7.6 2.6-13.3 0-7.2-5-12-13-12Z"/>
+    <path class="accent" d="M48 8 40 26h9l-9 18" stroke-width="2.6"/>
+  </symbol>
+</svg>
 <!-- Icon sprite. The five-star row repeats a dozen times across the site;
      defining the path once and referencing it keeps the markup readable. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -218,53 +283,47 @@
       </div>
 
       <div class="grid g-3">
-        <a class="card svc-card rev" href="services.html#root-canal">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3.3 0-5.5 2-5.5 5 0 2.4.7 3.6 1.1 5.6.4 2 .3 5.4 1.9 5.4 1.3 0 1.2-2.6 2.5-2.6s1.2 2.6 2.5 2.6c1.6 0 1.5-3.4 1.9-5.4.4-2 1.1-3.2 1.1-5.6 0-3-2.2-5-5.5-5Z"/><path d="M12 8.5v6"/></svg>
-          </span>
+        <article class="card svc-card rev">
+          <figure class="svc-media"><img src="assets/img/treatments/root-canal.jpg" alt="Dr. Amit Malik, in loupes, performing a root canal on a patient at the clinic" width="780" height="904" loading="lazy"></figure>
           <h3 class="d3">Magnification-Aided Root Canal Treatment</h3>
           <p>Single-visit where the tooth allows, under the operating microscope. Re-treatment of failed canals too.</p>
-        </a>
+          <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=root-canal#book" aria-label="Book Now: Magnification-Aided Root Canal Treatment">Book Now</a><a class="link-a" href="services.html#root-canal" aria-label="Learn more about Magnification-Aided Root Canal Treatment">Learn more</a></p>
+        </article>
 
-        <a class="card svc-card rev" href="services.html#crowns">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 6.5 12 12 5.5 17.5 12 21 8.5V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5Z"/></svg>
-          </span>
+        <article class="card svc-card rev">
+          <figure class="svc-media"><svg class="svc-art" viewBox="0 0 64 64" role="img" aria-label="Illustration: a crown seated over a prepared tooth"><use href="#t-crown"/></svg></figure>
           <h3 class="d3">Crowns &amp; Bridges</h3>
           <p>Zirconia and metal-ceramic crowns that rebuild a tooth after a root canal, a fracture or heavy decay.</p>
-        </a>
+          <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=crowns#book" aria-label="Book Now: Crowns and Bridges">Book Now</a><a class="link-a" href="services.html#crowns" aria-label="Learn more about Crowns and Bridges">Learn more</a></p>
+        </article>
 
-        <a class="card svc-card rev" href="services.html#implants">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8l-1 3H9L8 4Z"/><path d="M12 7v13"/><path d="M9.5 10.5h5M9.5 14h5"/></svg>
-          </span>
+        <article class="card svc-card rev">
+          <figure class="svc-media"><svg class="svc-art" viewBox="0 0 64 64" role="img" aria-label="Illustration: an implant post set into the jaw"><use href="#t-implant"/></svg></figure>
           <h3 class="d3">Dental Implants</h3>
           <p>For a tooth that genuinely cannot be saved &mdash; placement, healing and the final crown, planned end to end.</p>
-        </a>
+          <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=implants#book" aria-label="Book Now: Dental Implants">Book Now</a><a class="link-a" href="services.html#implants" aria-label="Learn more about Dental Implants">Learn more</a></p>
+        </article>
 
-        <a class="card svc-card rev" href="services.html#extractions">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3.3 0-5.5 2-5.5 5 0 2.4.7 3.6 1.1 5.6.4 2 .3 5.4 1.9 5.4 1.3 0 1.2-2.6 2.5-2.6s1.2 2.6 2.5 2.6c1.6 0 1.5-3.4 1.9-5.4.4-2 1.1-3.2 1.1-5.6 0-3-2.2-5-5.5-5Z"/><path d="m15.5 5.5-7 7"/></svg>
-          </span>
+        <article class="card svc-card rev">
+          <figure class="svc-media"><svg class="svc-art" viewBox="0 0 64 64" role="img" aria-label="Illustration: a tooth held by extraction forceps"><use href="#t-extraction"/></svg></figure>
           <h3 class="d3">Extractions &amp; Wisdom Teeth</h3>
           <p>Including impacted and surgically difficult wisdom teeth, with written aftercare you can actually follow.</p>
-        </a>
+          <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=extractions#book" aria-label="Book Now: Extractions and Wisdom Teeth">Book Now</a><a class="link-a" href="services.html#extractions" aria-label="Learn more about Extractions and Wisdom Teeth">Learn more</a></p>
+        </article>
 
-        <a class="card svc-card rev" href="services.html#cleaning">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M7 20v-5h10v5"/><path d="M8.5 15V9.5a3.5 3.5 0 0 1 7 0V15"/><path d="M12 6V3"/></svg>
-          </span>
+        <article class="card svc-card rev">
+          <figure class="svc-media"><svg class="svc-art" viewBox="0 0 64 64" role="img" aria-label="Illustration: a tooth being scaled and polished"><use href="#t-cleaning"/></svg></figure>
           <h3 class="d3">Cleaning &amp; Prevention</h3>
           <p>Scaling, polishing and a proper look at what is developing. The cheapest dentistry you will ever have.</p>
-        </a>
+          <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=cleaning#book" aria-label="Book Now: Cleaning and Prevention">Book Now</a><a class="link-a" href="services.html#cleaning" aria-label="Learn more about Cleaning and Prevention">Learn more</a></p>
+        </article>
 
-        <a class="card svc-card rev" href="services.html#emergency">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 19h18L12 3Z"/><path d="M12 9.5v4"/><circle cx="12" cy="16.4" r=".6" fill="currentColor"/></svg>
-          </span>
+        <article class="card svc-card rev">
+          <figure class="svc-media"><svg class="svc-art" viewBox="0 0 64 64" role="img" aria-label="Illustration: a tooth marked urgent"><use href="#t-emergency"/></svg></figure>
           <h3 class="d3">Dental Emergencies</h3>
           <p>Severe pain, swelling, a knocked-out tooth or a broken front tooth. Call &mdash; these are fitted in, not queued.</p>
-        </a>
+          <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=emergency#book" aria-label="Book Now: Dental Emergencies">Book Now</a><a class="link-a" href="services.html#emergency" aria-label="Learn more about Dental Emergencies">Learn more</a></p>
+        </article>
       </div>
 
       <p style="text-align:center;margin-top:clamp(32px,4vw,52px)">

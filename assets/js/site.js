@@ -1,12 +1,13 @@
 /* ==========================================================================
    DENTAL EXPERTS — behaviour.
 
-   Five small, independent pieces. Each is wrapped so a failure in one cannot
+   Six small, independent pieces. Each is wrapped so a failure in one cannot
    take down the others, and every one degrades to a usable page:
      1. Header shadow on scroll
      2. Drawer menu
      3. Scroll reveals
      4. Booking form -> WhatsApp
+     4b. Preselect treatment from ?service=
      5. Click-to-load map
    ========================================================================== */
 (function () {
@@ -132,6 +133,31 @@
         window.open(window.DX.waLink(lines.join('\n')), '_blank', 'noopener');
       });
     });
+  })();
+
+  /* -- 4b. Preselect the treatment from ?service= ------------------------- */
+  /* Every treatment has its own Book Now, arriving here as
+     contact.html?service=<slug>#book. Matching that slug against the
+     options' data-slug lands the patient on the form with their treatment
+     already chosen, instead of making them find it a second time. */
+  (function preselect() {
+    var sel = $('#f-treatment');
+    if (!sel) return;
+
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('service');
+    if (!slug) return;
+
+    // only ever a slug we wrote ourselves — never inject it into the DOM
+    slug = slug.replace(/[^a-z-]/gi, '');
+    var opt = sel.querySelector('option[data-slug="' + slug + '"]');
+    if (!opt) return;
+
+    sel.value = opt.value || opt.textContent;
+
+    /* Briefly flag the field so the change is visible rather than silent. */
+    sel.setAttribute('data-prefilled', 'true');
+    window.setTimeout(function () { sel.removeAttribute('data-prefilled'); }, 2600);
   })();
 
   /* -- 5. Click-to-load map ----------------------------------------------- */
