@@ -905,3 +905,11 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
 @media (prefers-reduced-motion: reduce) {
   .faq .faq-sign, .faq .faq-sign::before, .faq .faq-sign::after { transition: none; }
 }
+
+/* The full address is 62 characters. On a phone it wrapped the top bar to
+   three rows and 118px — a lot of screen spent before the header starts.
+   The tap-to-call number and the hours are what earn their place there;
+   the address is a tap away in the footer, which links straight to Maps. */
+@media (max-width: 640px) {
+  .topbar .tb-addr { display: none; }
+}
