@@ -152,18 +152,18 @@ across all five HTML files, `robots.txt` and `sitemap.xml`. Until then the OG
 images will not resolve and the canonical tags point at a domain that does not
 exist.
 
-### 2. Confirm the opening hours — required
+### 2. Opening hours — confirmed
 
-Google publishes only "Open · Closes 7 pm" for this clinic. **Mon–Sat
-10:00–19:00, Sunday closed is an assumption, not a fact.** Confirm, then update
-all five places:
+~~Google published only "Open · Closes 7 pm", so the schedule was a guess.~~
+The clinic has since confirmed: **open seven days a week, 10:00 am – 7:00 pm.**
 
-- `assets/js/config.js` → `hours`
-- the top bar and footer of all five pages
-- the Office Hours block in `contact.html`
-- the `openingHoursSpecification` in `index.html` and `contact.html`
-- the **time-slot options** in the booking form (`contact.html`) — they run
-  10 AM to 7 PM to match
+That is now consistent across the top bar and footer of all five pages, the
+Office Hours block in `contact.html`, `hours` in `assets/js/config.js`, and the
+`openingHoursSpecification` in the JSON-LD on `index.html` and `contact.html`.
+The booking form time slots already ran 10 AM to 7 PM and still match.
+
+If the hours ever change, change all six together — a clinic site with two
+different opening times on it is worse than one with none
 
 ### 3. The founder portrait is AI-generated
 

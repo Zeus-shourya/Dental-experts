@@ -36,19 +36,13 @@
       country: 'IN'
     },
 
-    /* ---- TODO: CONFIRM BEFORE LAUNCH ------------------------------------
-       Google only exposed "Open · Closes 7 pm" — the full weekly schedule was
-       not published, so the times below are a reasonable default, NOT a fact.
-       Confirm with the clinic, then update:
-         1. this object
-         2. the hours block in contact.html
-         3. the footer of all five pages
-         4. the openingHoursSpecification in index.html + contact.html
-         5. the time-slot <option> list in the booking form (both pages)
-       --------------------------------------------------------------------- */
+    /* Confirmed by the clinic: open seven days, 10:00 am to 7:00 pm.
+       Mirrored in the top bar and footer of all five pages, the Office Hours
+       block on contact.html, and the openingHoursSpecification in the JSON-LD
+       on index.html and contact.html. Change all of them together. */
     hours: {
-      weekdays: 'Monday – Saturday · 10:00 am – 7:00 pm',
-      sunday:   'Sunday · Closed'
+      week:  'Monday – Sunday · 10:00 am – 7:00 pm',
+      note:  'Open seven days a week'
     },
 
     /* No email address is published for this clinic, so the site deliberately
