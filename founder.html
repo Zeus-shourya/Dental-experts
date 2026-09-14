@@ -26,7 +26,7 @@
 
 <!-- Marks that scripting is live. The scroll-reveal CSS is gated on this, so
      if JS never runs the page renders normally instead of staying blank. -->
-<script>document.documentElement.className += ' js';</script>
+<script>document.documentElement.className += ' js';setTimeout(function(){if(!window.__motion)document.documentElement.classList.remove('js')},3000);</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,7 +142,7 @@
 <main id="main">
 
   <section class="banner">
-    <div class="shell">
+    <div class="shell rev-kids">
       <p class="crumb"><a href="index.html">Home</a><i>/</i>Our Dentist</p>
       <div class="orn" aria-hidden="true"><i></i></div>
       <h1 class="d1">Dr. Amit Malik</h1>
@@ -153,7 +153,7 @@
   <!-- ===================== THE CASE ===================== -->
   <section class="band bg-ivory">
     <div class="shell">
-      <div class="team rev">
+      <div class="team rev-split">
         <figure class="team-fig">
           <img src="assets/img/dr-amit-malik.jpg" alt="Portrait of Dr. Amit Malik, MDS, Restorative Dentist and Endodontist" width="900" height="1200" fetchpriority="high">
         </figure>
@@ -173,30 +173,30 @@
   <!-- ===================== HOW HE WORKS ===================== -->
   <section class="band bg-white">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">In practice</p>
         <h2 class="d2">How Dr. Malik Works</h2>
         <p class="lede">Four things that shape every appointment.</p>
       </div>
 
-      <div class="grid g-2">
-        <article class="card rev">
+      <div class="grid g-2 rev-kids">
+        <article class="card">
           <span class="card-num">01</span>
           <h3 class="d3" style="margin-top:.4em">He sees the case through himself</h3>
           <p>The person who diagnoses your tooth is the person who treats it. You are not handed to an assistant halfway through, and you do not explain your history twice.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">02</span>
           <h3 class="d3" style="margin-top:.4em">Diagnosis before instruments</h3>
           <p>An examination and an X-ray come first, and you are shown what they show. Treatment that starts before the cause is established tends to be treatment done twice.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">03</span>
           <h3 class="d3" style="margin-top:.4em">You are told what it costs, first</h3>
           <p>The estimate comes before consent, not after treatment. If a case turns out to need an extra visit, you hear it at the point it changes &mdash; not on the bill.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">04</span>
           <h3 class="d3" style="margin-top:.4em">Difficult cases stay in-house</h3>
           <p>Curved canals, calcified canals, a root canal done elsewhere that failed. These are the cases the clinic is equipped for, so they are not referred on and not converted into an extraction.</p>
@@ -208,12 +208,12 @@
   <!-- ===================== CREDENTIALS ===================== -->
   <section class="band bg-stone">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <h2 class="d2">Clinical Focus &amp; Qualifications</h2>
       </div>
 
-      <div class="grid g-2 rev">
+      <div class="grid g-2 rev-kids">
         <div class="card">
           <h3 class="d3" style="margin-bottom:.9em">Clinical Focus</h3>
           <dl class="rows">
@@ -246,7 +246,7 @@
   <!-- ===================== CONSULT ===================== -->
   <section class="band bg-navy">
     <div class="shell">
-      <div class="grid g-2 rev" style="align-items:center">
+      <div class="grid g-2 rev-kids" style="align-items:center">
         <div>
           <div class="orn orn-l" aria-hidden="true"><i></i></div>
           <p class="eyebrow">Second opinions</p>
@@ -275,7 +275,7 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="foot">
   <div class="shell">
-    <div class="foot-grid">
+    <div class="foot-grid rev-kids">
       <div>
         <a class="brand" href="index.html">
           <img class="brand-mark" src="assets/img/logo-mark.png" alt="" width="128" height="135" decoding="async">
@@ -344,7 +344,7 @@
       </div>
     </div>
 
-    <div class="foot-bar">
+    <div class="foot-bar rev">
       <span>&copy; 2026 Dental Experts, Sonipat. Precision Care. Confident Smiles.</span>
       <span>Information here is general and not a substitute for an examination.</span>
     </div>

@@ -26,7 +26,7 @@
 
 <!-- Marks that scripting is live. The scroll-reveal CSS is gated on this, so
      if JS never runs the page renders normally instead of staying blank. -->
-<script>document.documentElement.className += ' js';</script>
+<script>document.documentElement.className += ' js';setTimeout(function(){if(!window.__motion)document.documentElement.classList.remove('js')},3000);</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,7 +225,7 @@
   <section class="hero">
     <div class="shell">
       <div class="hero-grid">
-        <div>
+        <div class="rev-kids">
           <p class="eyebrow">Dental Experts &middot; Est. by Dr. Amit Malik</p>
           <h1 class="d1">Precision Care.<br>Confident Smiles.</h1>
           <p class="lede">A restorative and endodontic dental clinic built around one idea &mdash; most teeth that get pulled did not have to be. Root canals, crowns and implants under one roof.</p>
@@ -238,7 +238,7 @@
           </div>
         </div>
 
-        <figure class="hero-fig rev">
+        <figure class="hero-fig rev-r" data-rd="220">
           <img src="assets/img/clinic-microscope.jpg" alt="Dr. Amit Malik treating a patient at the dental operating microscope" width="1170" height="867" fetchpriority="high">
         </figure>
       </div>
@@ -250,7 +250,7 @@
     <!-- Real figures from the clinic's Google listing. Do not replace these
          with template-style inflated numbers: on a healthcare site an
          unverifiable claim is the kind that gets a listing suspended. -->
-    <div class="stats rev">
+    <div class="stats rev-kids">
       <div class="stat"><b>4.7</b><span>Google rating</span></div>
       <div class="stat"><b>12</b><span>Reviews</span></div>
       <div class="stat"><b>MDS</b><span>Endodontist</span></div>
@@ -261,50 +261,50 @@
   <!-- ===================== SERVICES ===================== -->
   <section class="band bg-white" id="services">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">What we do</p>
         <h2 class="d2">Comprehensive Dental Care</h2>
         <p class="lede">A clinic equipped for endodontics first &mdash; and for everything that follows once a tooth is saved.</p>
       </div>
 
-      <div class="grid g-3">
-        <article class="card svc-card rev">
+      <div class="grid g-3 rev-kids">
+        <article class="card svc-card">
           <figure class="svc-media"><img src="assets/img/treatments/root-canal.jpg" alt="Dr. Amit Malik, in loupes, performing a root canal on a patient at the clinic" width="780" height="904" loading="lazy"></figure>
           <h3 class="d3">Magnification-Aided Root Canal Treatment</h3>
           <p>Single-visit where the tooth allows, under the operating microscope. Re-treatment of failed canals too.</p>
           <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=root-canal#book" aria-label="Book Now: Magnification-Aided Root Canal Treatment">Book Now</a><a class="link-a" href="services.html#root-canal" aria-label="Learn more about Magnification-Aided Root Canal Treatment">Learn more</a></p>
         </article>
 
-        <article class="card svc-card rev">
+        <article class="card svc-card">
           <figure class="svc-media"><img src="assets/img/treatments/crowns.jpg" alt="A dentist explaining a cross-section model of a tooth" width="900" height="675" loading="lazy" decoding="async"></figure>
           <h3 class="d3">Crowns &amp; Bridges</h3>
           <p>Zirconia, E-max and metal-ceramic crowns that rebuild a tooth after a root canal, a fracture or heavy decay.</p>
           <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=crowns#book" aria-label="Book Now: Crowns and Bridges">Book Now</a><a class="link-a" href="services.html#crowns" aria-label="Learn more about Crowns and Bridges">Learn more</a></p>
         </article>
 
-        <article class="card svc-card rev">
+        <article class="card svc-card">
           <figure class="svc-media"><img src="assets/img/treatments/implants.jpg" alt="Model of a dental implant set between natural teeth" width="900" height="600" loading="lazy" decoding="async"></figure>
           <h3 class="d3">Dental Implants</h3>
           <p>For a tooth that genuinely cannot be saved &mdash; placement, healing and the final crown, planned end to end.</p>
           <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=implants#book" aria-label="Book Now: Dental Implants">Book Now</a><a class="link-a" href="services.html#implants" aria-label="Learn more about Dental Implants">Learn more</a></p>
         </article>
 
-        <article class="card svc-card rev">
+        <article class="card svc-card">
           <figure class="svc-media"><img src="assets/img/treatments/extractions.jpg" alt="A dental mirror and probe in use during an examination" width="900" height="675" loading="lazy" decoding="async"></figure>
           <h3 class="d3">Extractions &amp; Wisdom Teeth</h3>
           <p>Including impacted and surgically difficult wisdom teeth, with written aftercare you can actually follow.</p>
           <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=extractions#book" aria-label="Book Now: Extractions and Wisdom Teeth">Book Now</a><a class="link-a" href="services.html#extractions" aria-label="Learn more about Extractions and Wisdom Teeth">Learn more</a></p>
         </article>
 
-        <article class="card svc-card rev">
+        <article class="card svc-card">
           <figure class="svc-media"><img src="assets/img/treatments/cleaning.jpg" alt="A patient in the dental chair during a check-up, with a scan of the teeth on screen" width="900" height="720" loading="lazy" decoding="async"></figure>
           <h3 class="d3">Cleaning &amp; Prevention</h3>
           <p>Scaling, polishing and a proper look at what is developing. The cheapest dentistry you will ever have.</p>
           <p class="svc-book svc-actions"><a class="btn btn-gold" href="contact.html?service=cleaning#book" aria-label="Book Now: Cleaning and Prevention">Book Now</a><a class="link-a" href="services.html#cleaning" aria-label="Learn more about Cleaning and Prevention">Learn more</a></p>
         </article>
 
-        <article class="card svc-card rev">
+        <article class="card svc-card">
           <figure class="svc-media"><img src="assets/img/treatments/emergency.jpg" alt="A dentist reviewing dental X-rays on a light box" width="900" height="600" loading="lazy" decoding="async"></figure>
           <h3 class="d3">Dental Emergencies</h3>
           <p>Severe pain, swelling, a knocked-out tooth or a broken front tooth. Call &mdash; these are fitted in, not queued.</p>
@@ -312,7 +312,7 @@
         </article>
       </div>
 
-      <p style="text-align:center;margin-top:clamp(32px,4vw,52px)">
+      <p class="rev" style="text-align:center;margin-top:clamp(32px,4vw,52px)">
         <a class="btn btn-line" href="services.html">View All Ten Treatments</a>
       </p>
     </div>
@@ -325,8 +325,8 @@
        here and in the comparison table together. -->
   <section class="band bg-navy mem" id="membership">
     <div class="shell">
-      <div class="mem-intro">
-        <div class="rev">
+      <div class="mem-intro rev-split">
+        <div>
           <div class="orn orn-l" aria-hidden="true"><i></i></div>
           <p class="eyebrow">Dental Experts Membership</p>
           <h2 class="d2">One Plan. A Whole Year of Better Care.</h2>
@@ -337,13 +337,13 @@
             <li>Plans for one person, a couple, or the whole family</li>
           </ul>
         </div>
-        <figure class="mem-fig rev">
+        <figure class="mem-fig">
           <img src="assets/img/membership-family.jpg" alt="A smiling family of three sitting together on a sofa" width="1100" height="619" loading="lazy" decoding="async">
         </figure>
       </div>
 
-      <div class="plans">
-        <article class="plan rev">
+      <div class="plans rev-kids">
+        <article class="plan">
           <h3>Essential</h3>
           <p class="plan-for">For one person</p>
           <p class="plan-price"><b>&#8377;1,899</b><span>annual membership</span></p>
@@ -361,7 +361,7 @@
           </p>
         </article>
 
-        <article class="plan rev">
+        <article class="plan">
           <h3>Prime</h3>
           <p class="plan-for">For two people</p>
           <p class="plan-price"><b>&#8377;2,899</b><span>annual membership</span></p>
@@ -379,7 +379,7 @@
           </p>
         </article>
 
-        <article class="plan plan-feature rev">
+        <article class="plan plan-feature">
           <span class="plan-badge">Family plan</span>
           <h3>Elite</h3>
           <p class="plan-for">For up to four people</p>
@@ -432,26 +432,26 @@
   <!-- ===================== WHY US ===================== -->
   <section class="band bg-stone">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">Why Dental Experts</p>
         <h2 class="d2">The Difference Is the Diagnosis</h2>
       </div>
 
-      <div class="grid g-3">
-        <article class="card rev">
+      <div class="grid g-3 rev-kids">
+        <article class="card">
           <span class="card-num">01</span>
           <h3 class="d3" style="margin-top:.4em">A specialist, not a referral</h3>
           <p>Root canals are done here, by an MDS endodontist, under magnification. Complicated cases do not get sent elsewhere &mdash; or quietly downgraded to an extraction.</p>
         </article>
 
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">02</span>
           <h3 class="d3" style="margin-top:.4em">Diagnosis before instruments</h3>
           <p>You get an examination and an explanation first, shown on the X-ray rather than described in the abstract. Nothing starts until you know the options.</p>
         </article>
 
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">03</span>
           <h3 class="d3" style="margin-top:.4em">The price, up front</h3>
           <p>What the treatment costs is agreed before it begins &mdash; including what happens if the tooth turns out to need more than one visit.</p>
@@ -463,7 +463,7 @@
   <!-- ===================== MEET THE DENTIST ===================== -->
   <section class="band bg-ivory">
     <div class="shell">
-      <div class="team rev">
+      <div class="team rev-split">
         <figure class="team-fig">
           <img src="assets/img/dr-amit-malik.jpg" alt="Portrait of Dr. Amit Malik, MDS, Restorative Dentist and Endodontist" width="900" height="1200" loading="lazy">
         </figure>
@@ -492,7 +492,7 @@
   <!-- ===================== GOOGLE REVIEWS ===================== -->
   <section class="band bg-stone" id="reviews">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">Real patient feedback</p>
         <h2 class="d2">Rated 4.7 by the patients who came to us.</h2>
@@ -541,8 +541,8 @@
 
            The avatar is styled for either two-letter initials or the glyph,
            so no CSS change is needed. -->
-      <div class="grid g-3">
-        <figure class="gr-card rev">
+      <div class="grid g-3 rev-kids">
+        <figure class="gr-card">
           <div class="gr-top">
             <span class="gr-stars" role="img" aria-label="Rated 5 out of 5">
               <span class="gr-stars-bg" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
@@ -560,7 +560,7 @@
           </figcaption>
         </figure>
 
-        <figure class="gr-card rev">
+        <figure class="gr-card">
           <div class="gr-top">
             <span class="gr-stars" role="img" aria-label="Rated 5 out of 5">
               <span class="gr-stars-bg" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
@@ -578,7 +578,7 @@
           </figcaption>
         </figure>
 
-        <figure class="gr-card rev">
+        <figure class="gr-card">
           <div class="gr-top">
             <span class="gr-stars" role="img" aria-label="Rated 5 out of 5">
               <span class="gr-stars-bg" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
@@ -598,7 +598,7 @@
 
       </div>
 
-      <p style="text-align:center;margin-top:clamp(30px,3.6vw,46px)">
+      <p class="rev" style="text-align:center;margin-top:clamp(30px,3.6vw,46px)">
         <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Dental+Experts%2C+Rishika+Galleria%2C+Sector+8%2C+Sonipat%2C+Haryana+131001" target="_blank" rel="noopener">
           <svg viewBox="0 0 48 48" width="17" height="17" aria-hidden="true"><use href="#i-google"/></svg>
           Read All Reviews on Google
@@ -610,13 +610,13 @@
   <!-- ===================== FAQ ===================== -->
   <section class="band bg-ivory" id="faq">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">Everything you need to know</p>
         <h2 class="d2">Frequently Asked Questions</h2>
       </div>
 
-      <div class="faq rev">
+      <div class="faq rev-kids">
         <details name="faq">
           <summary>Is a root canal painful?<span class="faq-sign" aria-hidden="true"></span></summary>
           <div class="faq-body">
@@ -682,7 +682,7 @@
         </details>
       </div>
 
-      <p style="text-align:center;margin-top:clamp(28px,3.4vw,42px)">
+      <p class="rev" style="text-align:center;margin-top:clamp(28px,3.4vw,42px)">
         <a class="link-a" href="contact.html#book">Still have a question? Ask the clinic</a>
       </p>
     </div>
@@ -691,7 +691,7 @@
   <!-- ===================== CTA ===================== -->
   <section class="band bg-navy">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <h2 class="d2">Been Told a Tooth Has to Come Out?</h2>
         <p class="lede">Get a second opinion before it does. Bring any X-ray you already have, and the quote if you have one.</p>
@@ -707,7 +707,7 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="foot">
   <div class="shell">
-    <div class="foot-grid">
+    <div class="foot-grid rev-kids">
       <div>
         <a class="brand" href="index.html">
           <img class="brand-mark" src="assets/img/logo-mark.png" alt="" width="128" height="135" decoding="async">
@@ -776,7 +776,7 @@
       </div>
     </div>
 
-    <div class="foot-bar">
+    <div class="foot-bar rev">
       <span>&copy; 2026 Dental Experts, Sonipat. Precision Care. Confident Smiles.</span>
       <span>Information here is general and not a substitute for an examination.</span>
     </div>

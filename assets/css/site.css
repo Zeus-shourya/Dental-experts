@@ -504,9 +504,60 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
 .wa-float:hover { transform: scale(1.07); }
 .wa-float svg { width: 29px; height: 29px; }
 
-/* -- 12. Motion ----------------------------------------------------------- */
-.js .rev { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.js .rev.in { opacity: 1; transform: none; }
+/* -- 12. Motion -----------------------------------------------------------
+   Scroll-in motion after avanadental.com: content rises into place, the two
+   halves of a split row slide in from opposite sides, and grids stagger.
+
+   Vocabulary (set in the HTML so the hidden state exists before first paint,
+   which is what stops content flashing visible and then vanishing):
+     .rev         the element rises into place
+     .rev-l/.rev-r  the element slides in from the left / right
+     .rev-kids    each direct child rises, staggered
+     .rev-split   first child from the left, last child from the right
+
+   site.js adds .m-in to start an element's entrance and .m-done once it has
+   finished. .m-done takes the element out of every rule here, so its own
+   hover transforms and transitions work again — the previous version left a
+   permanent `transform: none` on revealed cards and killed their hover lift.
+
+   Only opacity and transform animate: both composite on the GPU and neither
+   triggers layout, so nothing reflows while it moves. */
+:root {
+  --m-dur: .85s;
+  --m-ease: cubic-bezier(.16, 1, .3, 1);
+  --m-rise: 28px;
+  --m-slide: 44px;
+}
+
+.js :is(.rev, .rev-l, .rev-r):not(.m-done),
+.js .rev-kids > :not(.m-done),
+.js .rev-split > :not(.m-done) {
+  opacity: 0;
+  transition: opacity var(--m-dur) var(--m-ease), transform var(--m-dur) var(--m-ease);
+  transition-delay: var(--rd, 0ms);
+}
+.js .rev:not(.m-done),
+.js .rev-kids > :not(.m-done),
+.js .rev-split > :not(.m-done)             { transform: translate3d(0, var(--m-rise), 0); }
+.js .rev-l:not(.m-done),
+.js .rev-split > :first-child:not(.m-done) { transform: translate3d(calc(var(--m-slide) * -1), 0, 0); }
+.js .rev-r:not(.m-done),
+.js .rev-split > :last-child:not(.m-done)  { transform: translate3d(var(--m-slide), 0, 0); }
+
+.js :is(.rev, .rev-l, .rev-r).m-in:not(.m-done),
+.js .rev-kids > .m-in:not(.m-done),
+.js .rev-split > .m-in:not(.m-done) { opacity: 1; transform: none; }
+
+/* Sideways slides would push past the right edge and flash a horizontal
+   scrollbar mid-animation. clip, unlike hidden, creates no scroll container,
+   so nothing inside loses sticky or anchor behaviour. */
+main, .foot { overflow-x: hidden; overflow-x: clip; }
+
+@media (max-width: 760px) { :root { --m-slide: 24px; --m-rise: 22px; } }
+
+@media print {
+  .js :is(.rev, .rev-l, .rev-r), .js .rev-kids > *, .js .rev-split > * { opacity: 1 !important; transform: none !important; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -514,7 +565,7 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
     animation-duration: .001ms !important; animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
   }
-  .js .rev { opacity: 1; transform: none; }
+  .js :is(.rev, .rev-l, .rev-r), .js .rev-kids > *, .js .rev-split > * { opacity: 1 !important; transform: none !important; }
 }
 
 /* -- 13. Responsive ------------------------------------------------------- */

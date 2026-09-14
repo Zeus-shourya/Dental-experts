@@ -26,7 +26,7 @@
 
 <!-- Marks that scripting is live. The scroll-reveal CSS is gated on this, so
      if JS never runs the page renders normally instead of staying blank. -->
-<script>document.documentElement.className += ' js';</script>
+<script>document.documentElement.className += ' js';setTimeout(function(){if(!window.__motion)document.documentElement.classList.remove('js')},3000);</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,7 +123,7 @@
 <main id="main">
 
   <section class="banner">
-    <div class="shell">
+    <div class="shell rev-kids">
       <p class="crumb"><a href="index.html">Home</a><i>/</i>Services</p>
       <div class="orn" aria-hidden="true"><i></i></div>
       <h1 class="d1">Our Treatments</h1>
@@ -134,16 +134,16 @@
   <!-- ===================== CORE FOUR ===================== -->
   <section class="band bg-ivory">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">What the clinic is built for</p>
         <h2 class="d2">Specialist Treatments</h2>
         <p class="lede">These four are the core of the practice &mdash; confirmed by the clinic&rsquo;s own description and its patient reviews.</p>
       </div>
 
-      <div class="grid" style="gap:clamp(20px,2.6vw,30px)">
+      <div class="grid rev-kids" style="gap:clamp(20px,2.6vw,30px)">
 
-        <article class="card rev" id="root-canal">
+        <article class="card" id="root-canal">
           <div class="svc-detail">
             <figure class="svc-media"><img src="assets/img/treatments/root-canal.jpg" alt="Dr. Amit Malik, in loupes, performing a root canal on a patient at the clinic" width="780" height="904" loading="lazy"></figure>
             <div>
@@ -164,7 +164,7 @@
           </div>
         </article>
 
-        <article class="card rev" id="crowns">
+        <article class="card" id="crowns">
           <div class="svc-detail">
             <figure class="svc-media"><img src="assets/img/treatments/crowns.jpg" alt="A dentist explaining a cross-section model of a tooth" width="900" height="675" loading="lazy" decoding="async"></figure>
             <div>
@@ -185,7 +185,7 @@
           </div>
         </article>
 
-        <article class="card rev" id="implants">
+        <article class="card" id="implants">
           <div class="svc-detail">
             <figure class="svc-media"><img src="assets/img/treatments/implants.jpg" alt="Model of a dental implant set between natural teeth" width="900" height="600" loading="lazy" decoding="async"></figure>
             <div>
@@ -206,7 +206,7 @@
           </div>
         </article>
 
-        <article class="card rev" id="extractions">
+        <article class="card" id="extractions">
           <div class="svc-detail">
             <figure class="svc-media"><img src="assets/img/treatments/extractions.jpg" alt="A dental mirror and probe in use during an examination" width="900" height="675" loading="lazy" decoding="async"></figure>
             <div>
@@ -234,15 +234,15 @@
   <!-- ===================== GENERAL DENTISTRY ===================== -->
   <section class="band bg-white">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">Also offered</p>
         <h2 class="d2">General Dentistry</h2>
         <p class="lede">Everyday care alongside the specialist work.</p>
       </div>
 
-      <div class="grid g-3">
-        <article class="card svc-card rev" id="cleaning">
+      <div class="grid g-3 rev-kids">
+        <article class="card svc-card" id="cleaning">
           <figure class="svc-media"><img src="assets/img/treatments/cleaning.jpg" alt="A patient in the dental chair during a check-up, with a scan of the teeth on screen" width="900" height="720" loading="lazy" decoding="async"></figure>
           <span class="card-num">05</span>
           <h3 class="d3" style="margin-top:.4em">Cleaning &amp; Preventive Care</h3>
@@ -250,7 +250,7 @@
           <p class="svc-book"><a class="btn btn-gold" href="contact.html?service=cleaning#book" aria-label="Book Now: Cleaning and Preventive Care">Book Now</a></p>
         </article>
 
-        <article class="card svc-card rev" id="gums">
+        <article class="card svc-card" id="gums">
           <figure class="svc-media"><img src="assets/img/treatments/gums.jpg" alt="Close-up of a smile showing healthy gums" width="900" height="600" loading="lazy" decoding="async"></figure>
           <span class="card-num">06</span>
           <h3 class="d3" style="margin-top:.4em">Gum Treatment</h3>
@@ -258,7 +258,7 @@
           <p class="svc-book"><a class="btn btn-gold" href="contact.html?service=gums#book" aria-label="Book Now: Gum Treatment">Book Now</a></p>
         </article>
 
-        <article class="card svc-card rev" id="whitening">
+        <article class="card svc-card" id="whitening">
           <figure class="svc-media"><img src="assets/img/treatments/whitening.jpg" alt="Close-up of bright, white teeth" width="900" height="720" loading="lazy" decoding="async"></figure>
           <span class="card-num">07</span>
           <h3 class="d3" style="margin-top:.4em">Whitening &amp; Smile Design</h3>
@@ -266,7 +266,7 @@
           <p class="svc-book"><a class="btn btn-gold" href="contact.html?service=whitening#book" aria-label="Book Now: Whitening and Smile Design">Book Now</a></p>
         </article>
 
-        <article class="card svc-card rev" id="dentures">
+        <article class="card svc-card" id="dentures">
           <figure class="svc-media"><img src="assets/img/treatments/dentures.jpg" alt="Hands holding a partial denture" width="900" height="600" loading="lazy" decoding="async"></figure>
           <span class="card-num">08</span>
           <h3 class="d3" style="margin-top:.4em">Dentures</h3>
@@ -274,7 +274,7 @@
           <p class="svc-book"><a class="btn btn-gold" href="contact.html?service=dentures#book" aria-label="Book Now: Dentures">Book Now</a></p>
         </article>
 
-        <article class="card svc-card rev" id="children">
+        <article class="card svc-card" id="children">
           <figure class="svc-media"><img src="assets/img/treatments/children.jpg" alt="A dentist examining a young boy's teeth" width="900" height="599" loading="lazy" decoding="async" style="object-position:30% 34%"></figure>
           <span class="card-num">09</span>
           <h3 class="d3" style="margin-top:.4em">Children&rsquo;s Dentistry</h3>
@@ -282,7 +282,7 @@
           <p class="svc-book"><a class="btn btn-gold" href="contact.html?service=children#book" aria-label="Book Now: Children's Dentistry">Book Now</a></p>
         </article>
 
-        <article class="card svc-card rev" id="emergency">
+        <article class="card svc-card" id="emergency">
           <figure class="svc-media"><img src="assets/img/treatments/emergency.jpg" alt="A dentist reviewing dental X-rays on a light box" width="900" height="600" loading="lazy" decoding="async"></figure>
           <span class="card-num">10</span>
           <h3 class="d3" style="margin-top:.4em">Dental Emergencies</h3>
@@ -296,7 +296,7 @@
   <!-- ===================== EMERGENCY PANEL ===================== -->
   <section class="band-tight bg-stone">
     <div class="shell">
-      <div class="grid g-2 rev" style="align-items:center">
+      <div class="grid g-2 rev-kids" style="align-items:center">
         <div class="panel" style="background:var(--white)">
           <p class="eyebrow">In pain right now?</p>
           <h2 class="d2" style="font-size:clamp(1.6rem,2.4vw,2.1rem);margin-bottom:.5em">Call, do not wait for a form</h2>
@@ -323,7 +323,7 @@
   <!-- ===================== START HERE ===================== -->
   <section class="band bg-navy">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <h2 class="d2">Start With an Examination</h2>
         <p class="lede">Every treatment on this page begins the same way: someone looks at the tooth, takes an X-ray if one is needed, and tells you the options and what each costs. If you have been quoted elsewhere, bring the quote and the X-ray.</p>
@@ -339,7 +339,7 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="foot">
   <div class="shell">
-    <div class="foot-grid">
+    <div class="foot-grid rev-kids">
       <div>
         <a class="brand" href="index.html">
           <img class="brand-mark" src="assets/img/logo-mark.png" alt="" width="128" height="135" decoding="async">
@@ -408,7 +408,7 @@
       </div>
     </div>
 
-    <div class="foot-bar">
+    <div class="foot-bar rev">
       <span>&copy; 2026 Dental Experts, Sonipat. Precision Care. Confident Smiles.</span>
       <span>Information here is general and not a substitute for an examination.</span>
     </div>

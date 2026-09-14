@@ -430,3 +430,54 @@ containers, so each inline element became its own grid item and the trailing
 text dropped into the 20px bullet column, one word per line — the membership
 cards measured **1,250px** tall. `.ticks` is now block layout with a
 positioned marker, site-wide, and the cards measure 578px.
+
+---
+
+## Scroll-in motion
+
+Content slides into place as it scrolls into view, after the motion on
+[avanadental.com](https://www.avanadental.com/): headings and cards rise, the
+two halves of a split row (photo and text) come in from opposite sides, and
+grids of cards stagger one after another. The page opening — the home hero and
+the banner on each inner page — plays as soon as the page loads.
+
+It is driven by four classes in the HTML, so the hidden starting state exists
+before the first paint and nothing flashes visible and then vanishes:
+
+| Class | Effect |
+|---|---|
+| `rev` | the element rises into place |
+| `rev-l` / `rev-r` | slides in from the left / right |
+| `rev-kids` | each direct child rises, staggered |
+| `rev-split` | first child from the left, last child from the right |
+
+To animate something new, add one of those classes. Motion lives in section 12
+of `site.css` and section 3 of `site.js`.
+
+### Kept clean on purpose
+
+- **Only opacity and transform move.** Both composite on the GPU and neither
+  triggers layout, so nothing reflows mid-animation.
+- **One easing, one duration** (0.85s, a soft ease-out) everywhere, with a 90ms
+  stagger capped at 450ms so a fast scroll never leaves content queuing.
+- **No horizontal scrollbar flash.** `main` and the footer clip sideways
+  overflow while elements slide in from the edges; distances shorten on phones.
+- **Hover works after the entrance.** Once an element has arrived it is taken
+  out of the motion rules entirely. The previous fade-in left a permanent
+  `transform: none` on every revealed card, which quietly disabled their hover
+  lift.
+- **Nothing can be left invisible.** The observer only sees positions the
+  browser actually paints, so a hard flick or a jump to `#membership` can carry
+  an element past the viewport between frames. A safety sweep shows anything
+  scrolled past unseen and starts anything in view that was missed. Tested: a
+  direct jump to `#membership` leaves every section above it visible.
+- **Hero never half-missing.** On a narrow screen the headline can land just
+  under the fold; the page opening plays on load regardless.
+- **Reduced motion is respected.** Visitors with that setting on get every
+  element in place immediately.
+- **Failsafe.** If `site.js` fails to load, an inline script in `<head>`
+  unhides everything after three seconds.
+
+Verified by scrolling every page top to bottom at 1280px, 728px and 375px:
+every element completed its entrance, none was left hidden, and horizontal
+overflow stayed at 0px throughout.

@@ -26,7 +26,7 @@
 
 <!-- Marks that scripting is live. The scroll-reveal CSS is gated on this, so
      if JS never runs the page renders normally instead of staying blank. -->
-<script>document.documentElement.className += ' js';</script>
+<script>document.documentElement.className += ' js';setTimeout(function(){if(!window.__motion)document.documentElement.classList.remove('js')},3000);</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,7 +176,7 @@
 
   <!-- ===================== BANNER ===================== -->
   <section class="banner">
-    <div class="shell">
+    <div class="shell rev-kids">
       <p class="crumb"><a href="index.html">Home</a><i>/</i>Contact</p>
       <div class="orn" aria-hidden="true"><i></i></div>
       <h1 class="d1">Get in Touch</h1>
@@ -189,8 +189,8 @@
     <div class="shell">
       <h2 class="sr-only">How to reach the clinic</h2>
 
-      <div class="grid g-3">
-        <article class="card contact-card rev">
+      <div class="grid g-3 rev-kids">
+        <article class="card contact-card">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
           </span>
@@ -199,7 +199,7 @@
           <a href="tel:+919034555897">+91 90345 55897</a>
         </article>
 
-        <article class="card contact-card rev">
+        <article class="card contact-card">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Z"/></svg>
           </span>
@@ -208,7 +208,7 @@
           <a href="https://wa.me/919034555897?text=Hello%20Dental%20Experts%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Message the clinic</a>
         </article>
 
-        <article class="card contact-card rev">
+        <article class="card contact-card">
           <span class="ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10.3" r="2.9"/></svg>
           </span>
@@ -229,8 +229,8 @@
   <!-- ===================== BOOKING FORM ===================== -->
   <section class="band bg-white" id="book">
     <div class="shell">
-      <div class="book-grid" id="book-grid">
-        <div class="rev">
+      <div class="book-grid rev-split" id="book-grid">
+        <div>
           <div class="orn orn-l" aria-hidden="true"><i></i></div>
           <p class="eyebrow">Book an appointment</p>
           <h2 class="d2" style="margin-bottom:.6em">Request Your Visit</h2>
@@ -318,7 +318,7 @@
           </div>
         </div>
 
-        <aside class="rev" style="display:grid;gap:var(--gap)">
+        <aside style="display:grid;gap:var(--gap)">
           <div class="card">
             <h3 class="d3" style="margin-bottom:.8em">Office Hours</h3>
             <dl class="rows">
@@ -357,7 +357,7 @@
   <!-- ===================== FIND US ===================== -->
   <section class="band-tight bg-stone">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <h2 class="d2">Find Us</h2>
         <p class="lede">Second floor of Rishika Galleria, beside the main gate of Parsvnath City, Sector 8.</p>
@@ -378,7 +378,7 @@
   <!-- ===================== STILL HAVE QUESTIONS ===================== -->
   <section class="band bg-navy">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <h2 class="d2">Still Have Questions?</h2>
         <p class="lede">If you have been told a tooth has to come out, that is exactly the case worth a second opinion &mdash; before it does.</p>
@@ -394,7 +394,7 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="foot">
   <div class="shell">
-    <div class="foot-grid">
+    <div class="foot-grid rev-kids">
       <div>
         <a class="brand" href="index.html">
           <img class="brand-mark" src="assets/img/logo-mark.png" alt="" width="128" height="135" decoding="async">
@@ -463,7 +463,7 @@
       </div>
     </div>
 
-    <div class="foot-bar">
+    <div class="foot-bar rev">
       <span>&copy; 2026 Dental Experts, Sonipat. Precision Care. Confident Smiles.</span>
       <span>Information here is general and not a substitute for an examination.</span>
     </div>

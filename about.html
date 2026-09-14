@@ -26,7 +26,7 @@
 
 <!-- Marks that scripting is live. The scroll-reveal CSS is gated on this, so
      if JS never runs the page renders normally instead of staying blank. -->
-<script>document.documentElement.className += ' js';</script>
+<script>document.documentElement.className += ' js';setTimeout(function(){if(!window.__motion)document.documentElement.classList.remove('js')},3000);</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,7 +123,7 @@
 <main id="main">
 
   <section class="banner">
-    <div class="shell">
+    <div class="shell rev-kids">
       <p class="crumb"><a href="index.html">Home</a><i>/</i>About</p>
       <div class="orn" aria-hidden="true"><i></i></div>
       <h1 class="d1">About the Clinic</h1>
@@ -134,7 +134,7 @@
   <!-- ===================== STORY ===================== -->
   <section class="band bg-ivory">
     <div class="shell">
-      <div class="team rev">
+      <div class="team rev-split">
         <figure class="team-fig">
           <img src="assets/img/clinic-microscope.jpg" alt="Dr. Amit Malik working at the dental operating microscope" width="1170" height="867" fetchpriority="high" style="aspect-ratio:4/5">
         </figure>
@@ -154,30 +154,30 @@
   <!-- ===================== HOW A VISIT GOES ===================== -->
   <section class="band bg-white">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">What to expect</p>
         <h2 class="d2">How an Appointment Goes</h2>
         <p class="lede">No surprises, in either direction. Here is the actual sequence.</p>
       </div>
 
-      <div class="grid g-4">
-        <article class="card rev">
+      <div class="grid g-4 rev-kids">
+        <article class="card">
           <span class="card-num">01</span>
           <h3 class="d3" style="margin-top:.4em">You are examined</h3>
           <p>What hurts, for how long, what makes it worse. Any X-ray you already have is worth bringing &mdash; it saves taking another.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">02</span>
           <h3 class="d3" style="margin-top:.4em">You are shown the problem</h3>
           <p>On the X-ray or the intra-oral image, not described in the abstract. If there is more than one reasonable option, you hear all of them.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">03</span>
           <h3 class="d3" style="margin-top:.4em">You get the price</h3>
           <p>Including what happens if the tooth turns out to need more than one visit. A number that changes halfway through is not a number.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <span class="card-num">04</span>
           <h3 class="d3" style="margin-top:.4em">Then treatment</h3>
           <p>Nothing begins until you have said yes to a plan you understand. Emergencies are the exception: pain gets settled first.</p>
@@ -189,22 +189,22 @@
   <!-- ===================== WHAT WE WON'T DO ===================== -->
   <section class="band bg-stone">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <p class="eyebrow">Our commitments</p>
         <h2 class="d2">What We Will Not Do</h2>
       </div>
 
-      <div class="grid g-3">
-        <article class="card rev">
+      <div class="grid g-3 rev-kids">
+        <article class="card">
           <h3 class="d3">Sell you a treatment plan</h3>
           <p>If a tooth needs watching rather than drilling, that is what you will be told. A check-up that ends in &ldquo;come back in six months&rdquo; is a valid outcome.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <h3 class="d3">Quote a price that moves</h3>
           <p>The estimate you agree to is the estimate. If something genuinely changes mid-treatment, you are told before the next step, not at the counter.</p>
         </article>
-        <article class="card rev">
+        <article class="card">
           <h3 class="d3">Extract a tooth we could save</h3>
           <p>Extraction is the last option, not the quick one. If you have been told a tooth must come out, it is worth a second look first.</p>
         </article>
@@ -215,7 +215,7 @@
   <!-- ===================== PRACTICAL ===================== -->
   <section class="band bg-ivory">
     <div class="shell">
-      <div class="grid g-2 rev">
+      <div class="grid g-2 rev-kids">
         <div class="card">
           <h3 class="d3" style="margin-bottom:.9em">The Clinic at a Glance</h3>
           <dl class="rows">
@@ -243,7 +243,7 @@
 
   <section class="band bg-navy">
     <div class="shell">
-      <div class="sec-head rev">
+      <div class="sec-head rev-kids">
         <div class="orn" aria-hidden="true"><i></i></div>
         <h2 class="d2">Been Told a Tooth Has to Come Out?</h2>
         <p class="lede">Get a second opinion before it does. Bring any X-ray you already have.</p>
@@ -259,7 +259,7 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="foot">
   <div class="shell">
-    <div class="foot-grid">
+    <div class="foot-grid rev-kids">
       <div>
         <a class="brand" href="index.html">
           <img class="brand-mark" src="assets/img/logo-mark.png" alt="" width="128" height="135" decoding="async">
@@ -328,7 +328,7 @@
       </div>
     </div>
 
-    <div class="foot-bar">
+    <div class="foot-bar rev">
       <span>&copy; 2026 Dental Experts, Sonipat. Precision Care. Confident Smiles.</span>
       <span>Information here is general and not a substitute for an examination.</span>
     </div>
