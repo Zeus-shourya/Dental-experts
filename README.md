@@ -361,3 +361,72 @@ star measures 6.09:1 against the card, well past the 3:1 a meaningful graphic
 needs. The summary bar flips to a column at 560px and its divider rotates with
 it; the card grid goes 3 → 2 → 1. Heading order is still clean and the page
 still has exactly one `<h1>`.
+
+---
+
+## Membership plans
+
+A premium membership section sits on the home page directly after the
+treatments, linked from the header, drawer and footer of every page as
+**Membership** (`index.html#membership`).
+
+The plan structure and benefits come from the clinic's membership brochure,
+with two figures changed on the clinic's instruction:
+
+| Benefit | Brochure | On the site |
+|---|---|---|
+| Dental implants | ₹1,500 off each | **₹1,999 off each** |
+| Orthodontic treatment | ₹2,000 off | **₹3,999 off** |
+
+Everything else is exactly as the brochure states it — Essential ₹1,899 for
+one person, Prime ₹2,899 for two, Elite ₹3,999 for up to four; unlimited
+consultations and digital X-rays; two cleanings (per member on Prime and
+Elite); implants capped at 2 on Essential and 4 on the others; 15% off
+metal-free crowns and 10% off other procedures, with implant crowns excluded
+from the discounts. Each **Join** button opens WhatsApp with the plan and price
+already written into the message.
+
+### Confirm before promoting it
+
+- **Orthodontics is not on the site.** The plans offer ₹3,999 off orthodontic
+  treatment, but `services.html` lists no braces or aligners. Either add the
+  treatment, or check the clinic actually offers it.
+- **"Annual membership."** The brochure says benefits run "all year round", so
+  the cards say annual. Confirm the period.
+- **Digital X-rays.** "Unlimited digital X-rays" is a claim about equipment;
+  make sure the clinic has it.
+- **The other figures.** Only the implant and ortho discounts were changed.
+  The tier prices, percentages and limits are the brochure's; check they are
+  still the ones the clinic wants to honour, because they are now a published
+  offer.
+
+The membership figures live in two places in `index.html` — the plan cards and
+the comparison table under them. Change both together.
+
+---
+
+## Photos
+
+Every image slot on the site now holds a photograph. The three that show the
+clinic itself — Dr. Malik at the microscope, Dr. Malik treating a patient, and
+the founder portrait — are the clinic's own. The nine remaining treatment
+photos and the membership photo are **Unsplash** stock, free-licence only,
+chosen to match the bright, clinical look of the reference site.
+
+Sources, photographers and the licence are listed in
+[`PHOTO-CREDITS.md`](PHOTO-CREDITS.md).
+
+The stock photos are **illustrative**: they show the treatment, not this
+clinic's rooms, staff or patients, and none is presented as a treatment
+result. To replace one with a real clinic photo, overwrite the file at the
+same path — no markup change needed. Real photos of the clinic's own work will
+always serve a local practice better than stock.
+
+### Bug found on the way
+
+The benefit lists mix bold figures with plain text
+(`<strong>15% off</strong> metal-free crowns`). The list items were grid
+containers, so each inline element became its own grid item and the trailing
+text dropped into the 20px bullet column, one word per line — the membership
+cards measured **1,250px** tall. `.ticks` is now block layout with a
+positioned marker, site-wide, and the cards measure 578px.

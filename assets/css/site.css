@@ -385,8 +385,12 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
 
 /* Bullet list */
 .ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 11px; }
-.ticks li { display: grid; grid-template-columns: 20px 1fr; gap: 12px; align-items: start; font-size: .96rem; }
-.ticks li::before { content: ''; width: 7px; height: 7px; margin-top: .62em; background: var(--gold); transform: rotate(45deg); }
+/* Block layout with a positioned marker, not a grid. As a grid, any line that
+   mixed an inline element with text ("<strong>15% off</strong> crowns") split
+   into separate grid items, and the trailing text landed in the 20px marker
+   column one word per line — membership cards measured 1,250px tall. */
+.ticks li { position: relative; display: block; padding-left: 30px; font-size: .96rem; }
+.ticks li::before { content: ''; position: absolute; left: 6px; top: .62em; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
 
 /* Definition rows */
 .rows { margin: 0; }
@@ -913,3 +917,97 @@ a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border
 @media (max-width: 640px) {
   .topbar .tb-addr { display: none; }
 }
+
+/* -- Membership -----------------------------------------------------------
+   Navy band, brass detailing: the most "premium" register the palette has.
+   Three plan cards for the decision, then a full comparison table for the
+   fine detail, so the cards can stay short. */
+.mem .mem-intro {
+  display: grid; grid-template-columns: 1.08fr .92fr;
+  gap: clamp(28px, 5vw, 72px); align-items: center;
+  margin-bottom: clamp(44px, 5.5vw, 76px);
+}
+.mem .mem-why { margin-top: 1.6rem; }
+.mem .mem-why li { color: var(--ivory); }
+
+.mem-fig { position: relative; margin: 0; isolation: isolate; }
+.mem-fig img {
+  display: block; width: 100%; aspect-ratio: 16 / 11; object-fit: cover; object-position: 50% 40%;
+  border-radius: var(--r-xl);
+}
+.mem-fig::before {
+  content: ''; position: absolute; inset: -12px; z-index: -1;
+  border: 1px solid rgba(205,163,80,.55); border-radius: calc(var(--r-xl) + 7px);
+}
+
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 26px); align-items: stretch; }
+.plan {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--navy-soft);
+  border: 1px solid var(--navy-line);
+  border-radius: var(--r-lg);
+  padding: clamp(24px, 2.6vw, 34px);
+  transition: transform .24s var(--ease), border-color .24s var(--ease), box-shadow .24s var(--ease);
+}
+.plan:hover { transform: translateY(-4px); border-color: rgba(205,163,80,.55); box-shadow: 0 16px 40px rgba(0,0,0,.28); }
+.plan-feature { border-color: var(--gold); background: linear-gradient(170deg, #22486A 0%, var(--navy-soft) 60%); }
+.plan-badge {
+  position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+  background: var(--gold); color: var(--navy-deep);
+  font-size: .72rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: var(--r-pill); white-space: nowrap;
+}
+.plan h3 { color: var(--ivory); font-size: clamp(1.5rem, 2.1vw, 1.9rem); }
+.plan-for { margin: .15rem 0 1.2rem; font-size: .9rem; color: var(--gold); letter-spacing: .02em; }
+.plan-price {
+  display: flex; align-items: baseline; gap: 6px;
+  padding-bottom: 1.2rem; margin-bottom: 1.3rem; border-bottom: 1px solid var(--navy-line);
+}
+.plan-price b {
+  font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600;
+  font-size: clamp(2.5rem, 3.6vw, 3.2rem); line-height: 1; color: var(--ivory);
+}
+.plan-price span { font-size: .85rem; color: var(--on-navy); }
+.plan .ticks { flex: 1; gap: 10px; }
+.plan .ticks li { color: var(--on-navy); font-size: .93rem; }
+.plan .ticks li strong { color: var(--ivory); font-weight: 500; }
+.plan-cta { margin-top: 1.6rem; display: grid; gap: 10px; }
+.plan-cta .btn { width: 100%; }
+
+/* Comparison table */
+.mem-compare { margin-top: clamp(40px, 5vw, 64px); }
+.mem-compare h3 { color: var(--ivory); text-align: center; margin-bottom: 1.2rem; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--navy-line); border-radius: var(--r-lg); }
+.mem-table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: .93rem; }
+.mem-table th, .mem-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--navy-line); vertical-align: top; }
+.mem-table tr:last-child th, .mem-table tr:last-child td { border-bottom: 0; }
+.mem-table thead th {
+  background: rgba(205,163,80,.12); color: var(--gold);
+  font-weight: 500; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem;
+}
+.mem-table thead th b { display: block; color: var(--ivory); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; text-transform: none; letter-spacing: 0; font-weight: 600; }
+.mem-table tbody th { color: var(--ivory); font-weight: 500; width: 30%; }
+.mem-table tbody th small { display: block; color: var(--on-navy); font-weight: 300; font-size: .8rem; margin-top: 2px; }
+.mem-table td { color: var(--on-navy); }
+.mem-note { margin-top: 1.2rem; text-align: center; font-size: .85rem; color: var(--on-navy); }
+
+@media (max-width: 960px) {
+  .mem .mem-intro { grid-template-columns: 1fr; }
+  .mem-fig { max-width: 560px; }
+  .plans { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .plan-feature { margin-top: 12px; }
+}
+@media (max-width: 640px) { .mem-fig::before { inset: -8px; } }
+
+/* Six nav links (Membership added) no longer fit beside the brand and the
+   CTA between 1040px and ~1180px, so the burger takes over earlier. */
+@media (max-width: 1180px) {
+  .nav { display: none; }
+  .burger { display: inline-flex; }
+}
+.mem-note a { padding-block: 3px; }
+
+/* `.svc-card > p` also matched the Book Now paragraph, so it and the
+   description split the spare height and the buttons sat at different
+   heights across a row. The button row takes only what it needs. */
+.svc-card > .svc-book { flex: none; }
