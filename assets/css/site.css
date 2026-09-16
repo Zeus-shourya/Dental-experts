@@ -1062,3 +1062,8 @@ main, .foot { overflow-x: hidden; overflow-x: clip; }
    description split the spare height and the buttons sat at different
    heights across a row. The button row takes only what it needs. */
 .svc-card > .svc-book { flex: none; }
+
+/* Multi-panel clinical figures (a surgical sequence, a before-and-after)
+   must not be cropped — half the story would be cut off — so they sit inside
+   the frame instead of filling it. */
+.svc-media img.fit { object-fit: contain; }

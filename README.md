@@ -68,9 +68,9 @@ address and a line says so plainly, rather than inventing an inbox.
 
 | File | Page | Sections |
 |---|---|---|
-| `index.html` | Home | Hero · stats · six services · why-us · meet the dentist · patient stories · CTA |
+| `index.html` | Home | Hero · stats · six of the fifteen treatments · why-us · meet the dentist · patient stories · CTA |
 | `about.html` | About | Why the practice exists · how an appointment goes · what we will not do · at a glance |
-| `services.html` | Services | Four specialist treatments (anchored) · six general · emergency panel · start-here |
+| `services.html` | Services | Five specialist treatments (anchored) · ten more · emergency panel · start-here |
 | `founder.html` | Our Dentist | Dr. Amit Malik — philosophy · how he works · credentials · consult |
 | `contact.html` | Contact | Get in Touch · 3 cards · booking form · office hours · emergency · find us · CTA |
 
@@ -388,9 +388,9 @@ already written into the message.
 
 ### Confirm before promoting it
 
-- **Orthodontics is not on the site.** The plans offer ₹3,999 off orthodontic
-  treatment, but `services.html` lists no braces or aligners. Either add the
-  treatment, or check the clinic actually offers it.
+- ~~Orthodontics is not on the site.~~ **Closed.** Braces and Invisalign are
+  now treatments 08 and 09, so the orthodontic discount has something to point
+  at.
 - **"Annual membership."** The brochure says benefits run "all year round", so
   the cards say annual. Confirm the period.
 - **Digital X-rays.** "Unlimited digital X-rays" is a claim about equipment;
@@ -481,3 +481,46 @@ of `site.css` and section 3 of `site.js`.
 Verified by scrolling every page top to bottom at 1280px, 728px and 375px:
 every element completed its entrance, none was left hidden, and horizontal
 overflow stayed at 0px throughout.
+
+---
+
+## Treatments — the current fifteen
+
+Specialist entries (each with a "what this covers" list):
+
+1. Magnification-Aided Root Canal Treatment
+2. Crowns & Bridges
+3. Dental Implants & Implant-Supported Prosthesis
+4. Full Mouth Rehabilitation
+5. Extractions & Wisdom Teeth
+
+Cards:
+
+6. Cleaning & Preventive Care · 7. Gum Treatment · 8. Braces · 9. Invisalign ·
+10. Teeth Whitening · 11. Smile Design · 12. Dentures ·
+13. Children's Dentistry · 14. Dental Trauma Management · 15. Dental Emergencies
+
+**Whitening and Smile Design are separate treatments**, not one card.
+**Implants** now covers implant-supported bridges and dentures, not just single
+crowns, and its entry says so.
+
+A treatment lives in four places. Change them together or the site contradicts
+itself:
+
+- its entry on `services.html` — the `id` is what Book Now links to
+- its card on `index.html`, if it is one of the six shown there
+- its `<option data-slug="…">` in the booking form on `contact.html` — the slug
+  must match the `id` or Book Now will not preselect it
+- the `hasOfferCatalog` in the JSON-LD on `index.html` **and** `contact.html`
+
+The home page shows six of the fifteen and links to the rest; the button text
+says how many there are, so it needs changing when the count does.
+
+### Still to confirm
+
+- **Invisalign is a trademark**, and using the name usually means being a
+  certified provider. If the clinic is not, "clear aligners" is the safe wording
+  — a one-line edit in each of the four places above.
+- **Full Mouth Rehabilitation, Braces, Invisalign and Dental Trauma Management**
+  were added on the clinic's instruction. Unlike root canals, crowns and
+  extractions, they are not corroborated by the Google listing or its reviews.
