@@ -52,7 +52,7 @@ also the one thing that stops navy-and-white from looking like a bank.
 ### Where it departs from the reference on substance
 
 **The stats are real.** Gelos shows `10+` and `99%`. This clinic's verifiable
-figures are **4.7 rating, 12 Google reviews, a BDS MDS micro endodontist, 7 days a week** —
+figures are **4.8 rating, 19 Google reviews, a BDS MDS micro endodontist, 7 days a week** —
 that is what the strip says. On a healthcare site an unverifiable claim is the
 kind that gets a Google Business Profile suspended.
 
@@ -199,16 +199,17 @@ that patient's consent.
 
 ### 6. Reviews
 
-The three testimonials are genuine snippets from the clinic's Google reviews,
-but reviewer names were not visible. Replace the `Google review` captions with
-real first names once you can see them on the listing.
+The three testimonials are verbatim snippets from the clinic's Google reviews,
+each carrying the reviewer's real name, their Google review count and their
+star rating.
 
-The `aggregateRating` says **4.7 from 12 reviews** — accurate when the site was first built.
-Keep it current or drop the block: stale rating markup is worse than none.
+The `aggregateRating` says **4.8 from 19 reviews** — checked against the live
+listing on 16 September 2026. Keep it current or drop the block: stale rating
+markup is worse than none.
 
-The five stars on each card are decorative — they carry an `aria-label` but are
-not per-review ratings pulled from Google. If you replace the snippets, check
-the star count still matches what each reviewer actually left.
+The star row on each card is that reviewer's actual rating, not decoration. All
+three are 5-star. If you swap a snippet, set the `gr-stars-fg` width and the
+`aria-label` to match what that reviewer really left.
 
 ### 7. Which services are confirmed
 
@@ -321,7 +322,7 @@ Two accessibility fixes came out of building it, both verified by measurement:
 
 Rebuilt on the home page after the pattern on [mestroweb.in](https://mestroweb.in/):
 
-- **An aggregate bar** — the score, a star row, "Based on 12 Google reviews",
+- **An aggregate bar** — the score, a star row, "Based on 19 Google reviews",
   and the Google logo with "Verified patient ratings".
 - **Bordered white cards**, each carrying the Google "G" as a verified-review
   badge, the quote, and an author row.
@@ -330,29 +331,27 @@ Rebuilt on the home page after the pattern on [mestroweb.in](https://mestroweb.i
 The Google logo appears in its nominative sense — it tells the reader where the
 reviews came from. That is the same use every review widget makes of it.
 
-### Two deliberate differences from the reference
+### Two deliberate departures from the reference
 
-**The stars show 4.7, not 5.0.** The brass star row is clipped to 94% over a
+**The stars show 4.8, not 5.0.** The brass star row is clipped to 96% over a
 muted row underneath, so the rating is drawn as what it is. Five solid stars
-would overstate a 4.7. The accessible name on the row says "Rated 4.7 out of 5",
+would overstate a 4.8. The accessible name on the row says "Rated 4.8 out of 5",
 so the value never depends on reading the fill.
 
-**There are no reviewer names.** Mestro's cards carry real people — name,
-initials avatar, review count, "2 days ago". For this clinic the three quotes
-are verbatim from the listing, but **names, review counts and dates were never
-visible**, and inventing them on a healthcare site would be fabricating
-attribution for medical testimonials. So the author row shows a neutral avatar,
-"Google review", and "Verified by Google" — all of which is true.
+**The reviewer names are real.** Mestro's cards carry a name, an initials
+avatar, a review count and a date, and so do these now. The three reviewers,
+their Google review counts and their 5-star ratings are exactly as the listing
+shows them, and the quotes are unedited — typos included, because the lede above
+the cards promises that.
 
-The markup is ready for the real thing. `.gr-avatar` is styled for either a
-two-letter initial pair or the fallback glyph, so when you can see a name on the
-listing it is a two-line swap — there is a worked example in the comment above
-the card grid in `index.html`.
+Google gives relative dates ("3 months ago"), which rot in a static page, so the
+author rows carry months instead. Re-derive them whenever you refresh the block.
 
-Until then the JSON-LD carries **`aggregateRating` only, and no `Review`
-items**. Google's Review markup requires an `author`; publishing review schema
-with a placeholder author is exactly the kind of thing that earns a manual
-action. Add `Review` objects at the same time you add the names.
+The JSON-LD still carries **`aggregateRating` only, and no `Review` items**.
+Adding `Review` objects is possible now that there are real authors to name, but
+each one then has to be kept in sync with the listing by hand, and stale review
+markup is what earns a manual action. The aggregate alone is the
+lower-maintenance claim.
 
 ### Verified
 
