@@ -485,18 +485,32 @@ overflow stayed at 0px throughout.
 
 ## Treatments — the current fifteen
 
-Specialist entries (each with a "what this covers" list):
+All fifteen use the same row layout: a square image well, the copy and the
+Book Now button, and a "what this covers" list beside them. Below 1040px the
+list drops under the copy; below 760px the whole row stacks and the image well
+goes 16:9.
 
 1. Magnification-Aided Root Canal Treatment
 2. Crowns & Bridges
 3. Dental Implants & Implant-Supported Prosthesis
 4. Full Mouth Rehabilitation
 5. Extractions & Wisdom Teeth
+6. Cleaning & Preventive Care
+7. Gum Treatment
+8. Braces
+9. Invisalign
+10. Teeth Whitening
+11. Smile Design
+12. Dentures
+13. Children's Dentistry
+14. Dental Trauma Management
+15. 24 Hrs Dental Emergencies
 
-Cards:
-
-6. Cleaning & Preventive Care · 7. Gum Treatment · 8. Braces · 9. Invisalign ·
-10. Teeth Whitening · 11. Smile Design · 12. Dentures ·
+The image well changes shape between breakpoints, so any figure that is a
+composite or a multi-panel clinical sequence carries `class="fit"` — full mouth
+rehab, gums, smile design, dentures and dental trauma. Those letterbox instead
+of cropping, because a square crop of a stacked before-and-after cuts both
+halves. Single photographs use the default `cover` and fill the well.
 13. Children's Dentistry · 14. Dental Trauma Management · 15. 24 Hrs Dental Emergencies
 
 **Whitening and Smile Design are separate treatments**, not one card.
