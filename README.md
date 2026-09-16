@@ -498,7 +498,7 @@ Cards:
 
 6. Cleaning & Preventive Care · 7. Gum Treatment · 8. Braces · 9. Invisalign ·
 10. Teeth Whitening · 11. Smile Design · 12. Dentures ·
-13. Children's Dentistry · 14. Dental Trauma Management · 15. Dental Emergencies
+13. Children's Dentistry · 14. Dental Trauma Management · 15. 24 Hrs Dental Emergencies
 
 **Whitening and Smile Design are separate treatments**, not one card.
 **Implants** now covers implant-supported bridges and dentures, not just single

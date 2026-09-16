@@ -14,12 +14,15 @@
 | `treatments/gums.jpg` | Gum treatment | **Patient case**, six-stage surgical sequence |
 | `treatments/whitening.jpg` | Whitening | Patient under a whitening light |
 | `treatments/smile-design.jpg` | Smile design | **Patient case**, before and after |
+| `treatments/braces.jpg` | Braces | Close-up smile in fixed metal braces |
+| `treatments/dentures.jpg` | Dentures | Implant-supported overdentures, fitting surface and bite |
+| `treatments/dental-trauma.jpg` | Dental trauma | **Patient case**, eight-stage injury-to-braces sequence |
 | `assets/img/dr-amit-malik.jpg` | Founder portrait | **AI-generated** — see README |
 
 ### Two things to settle on these
 
-**Patient consent.** Three of the above are clinical photographs of identifiable
-patients' mouths — a surgical sequence and two before-and-afters. Publishing
+**Patient consent.** Four of the above are clinical photographs of identifiable
+patients' mouths — two surgical sequences and two before-and-afters. Publishing
 those needs each patient's consent on record. Before-and-after imagery in dental
 advertising also carries its own rules about implying a typical result. Both are
 the clinic's call, but they are decisions rather than defaults.
@@ -39,11 +42,8 @@ staff or patients, and none is presented as a result of treatment here.
 
 | File | Used for | Photographer | Source |
 |---|---|---|---|
-| `treatments/braces.jpg` | Braces | Katarzyna Zygnerska | [P8ernb_Ht-M](https://unsplash.com/photos/P8ernb_Ht-M) |
 | `treatments/invisalign.jpg` | Invisalign | Harold Hisona | [uTUsnv_UCSQ](https://unsplash.com/photos/uTUsnv_UCSQ) |
-| `treatments/dentures.jpg` | Dentures | Peter Kasprzyk | [U1gvhqVQ2kQ](https://unsplash.com/photos/U1gvhqVQ2kQ) |
 | `treatments/children.jpg` | Children's dentistry | Navy Medicine | [Y_D9bmeX1V0](https://unsplash.com/photos/Y_D9bmeX1V0) |
-| `treatments/dental-trauma.jpg` | Dental trauma | Umanoide | [KeVKEs1_RDU](https://unsplash.com/photos/KeVKEs1_RDU) |
 | `treatments/emergency.jpg` | Dental emergencies | Jonathan Borba | [v_2FRXEba94](https://unsplash.com/photos/v_2FRXEba94) |
 | `membership-family.jpg` | Membership | Vitaly Gariev | [2xb1csEK8As](https://unsplash.com/photos/2xb1csEK8As) |
 
