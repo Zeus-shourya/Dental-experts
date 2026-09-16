@@ -1,7 +1,7 @@
 # Dental Experts — Sonipat (v3)
 
 Five-page static site for **Dental Experts (Precision Care. Confident Smiles.)**,
-a dental clinic in Sector 8, Sonipat, Haryana, led by Dr. Amit Malik, MDS.
+a dental clinic in Sector 8, Sonipat, Haryana, led by Dr. Amit Malik, BDS MDS.
 
 This is a **third design direction**, taking its cues from
 [gelosdentistry.com](https://gelosdentistry.com/contact/). The clinic content is
@@ -52,7 +52,7 @@ also the one thing that stops navy-and-white from looking like a bank.
 ### Where it departs from the reference on substance
 
 **The stats are real.** Gelos shows `10+` and `99%`. This clinic's verifiable
-figures are **4.7 rating, 12 Google reviews, MDS endodontist, 6 days a week** —
+figures are **4.7 rating, 12 Google reviews, BDS MDS micro endodontist, 7 days a week** —
 that is what the strip says. On a healthcare site an unverifiable claim is the
 kind that gets a Google Business Profile suspended.
 
@@ -184,7 +184,7 @@ that patient's consent.
 
 ### 5. Still deliberately blank
 
-- **Dental college and DCI registration number.** The `MDS, Endodontist`
+- **Dental college and DCI registration number.** The `BDS MDS, Micro Endodontist`
   credential is confirmed; college and registration are not. There is a
   commented-out pair of rows in the Qualifications card in `founder.html` ready
   to fill in, plus `alumniOf` to add to the schema.
