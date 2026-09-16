@@ -70,7 +70,7 @@ address and a line says so plainly, rather than inventing an inbox.
 |---|---|---|
 | `index.html` | Home | Hero · stats · six of the fifteen treatments · why-us · meet the dentist · patient stories · CTA |
 | `about.html` | About | Why the practice exists · how an appointment goes · what we will not do · at a glance |
-| `services.html` | Services | Five specialist treatments (anchored) · ten more · emergency panel · start-here |
+| `services.html` | Services | All fifteen treatments in one section (anchored) · emergency panel · start-here |
 | `founder.html` | Our Dentist | Dr. Amit Malik — philosophy · how he works · credentials · consult |
 | `contact.html` | Contact | Get in Touch · 3 cards · booking form · office hours · emergency · find us · CTA |
 
