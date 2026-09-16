@@ -4,7 +4,8 @@
 
 | File | Used for | What it is |
 |---|---|---|
-| `assets/img/clinic-microscope.jpg` | Home hero, About | Dr. Amit Malik at the operating microscope |
+| `assets/img/clinic-microscope.jpg` | About | Dr. Amit Malik at the operating microscope |
+| `assets/img/dr-amit-malik-clinic.jpg` | Home hero | Dr. Amit Malik in the surgery, microscope behind him |
 | `treatments/root-canal.jpg` | Root canal | Dr. Amit Malik treating a patient |
 | `treatments/crowns.jpg` | Crowns & bridges | 3D render of a bridge seating over prepared teeth |
 | `treatments/implants.jpg` | Implants | 3D render of an implant in bone |
