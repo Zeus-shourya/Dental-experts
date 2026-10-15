@@ -203,9 +203,10 @@ The three testimonials are verbatim snippets from the clinic's Google reviews,
 each carrying the reviewer's real name, their Google review count and their
 star rating.
 
-The `aggregateRating` says **4.8 from 19 reviews** — checked against the live
-listing on 16 September 2026. Keep it current or drop the block: stale rating
-markup is worse than none.
+The visible rating says **4.8 from 19 reviews** — checked against the live
+listing on 16 September 2026. Keep it current. (The JSON-LD no longer carries
+an `aggregateRating`: Google ignores self-served LocalBusiness ratings, and
+stale rating markup is a risk. See the SEO section.)
 
 The star row on each card is that reviewer's actual rating, not decoration. All
 three are 5-star. If you swap a snippet, set the `gr-stars-fg` width and the
@@ -266,10 +267,19 @@ backend, keep that note.**
 
 ## SEO
 
-- Unique title (37–45 chars) and description (112–126 chars) per page.
-- `Dentist` + `LocalBusiness` JSON-LD on home and contact with address, hours,
-  phone, `sameAs`, `aggregateRating`, `areaServed` and an offer catalogue;
-  `Person` schema on the founder page; `BreadcrumbList` on inner pages.
+- Unique title (<= 60 chars) and description (130–160 chars) per page, aimed at
+  "dentist in Sonipat" (home, contact), "root canal specialist in Sonipat"
+  (founder) and "root canal / dental implants Sonipat" (services).
+- JSON-LD `@graph` on home: `Dentist` (`#business`: address, hours, phone,
+  `hasMap`, `medicalSpecialty`, `sameAs`, `areaServed` and the 15-treatment
+  `hasOfferCatalog`), the founder `Person` (`#dr-amit-malik`), `WebSite` and
+  `WebPage`; the visible FAQ is mirrored as `FAQPage`. Inner pages carry
+  `AboutPage` / `ProfilePage` (with the full `Person`) / `CollectionPage`
+  (`ItemList` of treatments) / `ContactPage` (NAP + hours), each with a
+  `BreadcrumbList`. No `aggregateRating` and no `priceRange` — neither is a
+  claim Google uses from a business's own site.
+- `sitemap.xml` carries `<lastmod>`; every page has meta robots, `og:locale`
+  `en_IN` and `og:image:alt`.
 - Name, address, phone and hours are hard-coded in the top bar and footer HTML
   of every page, not injected by JS, so Google can match them to the Business
   Profile.
@@ -347,11 +357,10 @@ the cards promises that.
 Google gives relative dates ("3 months ago"), which rot in a static page, so the
 author rows carry months instead. Re-derive them whenever you refresh the block.
 
-The JSON-LD still carries **`aggregateRating` only, and no `Review` items**.
-Adding `Review` objects is possible now that there are real authors to name, but
-each one then has to be kept in sync with the listing by hand, and stale review
-markup is what earns a manual action. The aggregate alone is the
-lower-maintenance claim.
+The JSON-LD carries **no `aggregateRating` and no `Review` items**. Google
+does not show star snippets for a business's own reviews of itself, and each
+item would have to be kept in sync with the listing by hand — stale review
+markup is what earns a manual action. The visible block is enough.
 
 ### Verified
 
@@ -524,7 +533,8 @@ itself:
 - its card on `index.html`, if it is one of the six shown there
 - its `<option data-slug="…">` in the booking form on `contact.html` — the slug
   must match the `id` or Book Now will not preselect it
-- the `hasOfferCatalog` in the JSON-LD on `index.html` **and** `contact.html`
+- the `hasOfferCatalog` in the JSON-LD on `index.html` **and** the `ItemList`
+  in the JSON-LD on `services.html`
 
 The home page shows six of the fifteen and links to the rest; the button text
 says how many there are, so it needs changing when the count does.

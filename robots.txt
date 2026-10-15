@@ -1,4 +1,5 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /serve.ps1
 
 Sitemap: https://sonipatdentalexperts.com/sitemap.xml
